@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { TetrisModule } from './tetris/tetris.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TetrisModule
   ],
   providers: [],
   bootstrap: [AppComponent]

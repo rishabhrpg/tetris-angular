@@ -1,0 +1,28 @@
+<div id="board">
+  <div
+    class="boundary"
+    *ngFor="let boundaryPart of boundaryService.boundary"
+    [style]="{ gridRowStart: boundaryPart.y, gridColumnStart: boundaryPart.x }"
+  ></div>
+  <div
+    class="block"
+    *ngFor="let blockPart of tetrisGameService.activeBlock?.getShape()"
+    [style]="{
+      gridRowStart: blockPart.y,
+      gridColumnStart: blockPart.x,
+      backgroundColor: tetrisGameService.activeBlock.getColor()
+    }"
+  ></div>
+
+  <ng-container *ngFor="let block of tetrisGameService.blocksOnBoard">
+    <div
+      class="block"
+      *ngFor="let blockPart of block.getShape()"
+      [style]="{
+        gridRowStart: blockPart.y,
+        gridColumnStart: blockPart.x,
+        backgroundColor: block.getColor()
+      }"
+    ></div>
+  </ng-container>
+</div>
